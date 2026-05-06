@@ -6,7 +6,7 @@
 
 ## Preview
 
-**Live Site:** [fedouabel.github.io](https://fedouabel.github.io)
+**Live Site:** [fedbel.github.io](https://fedbel.github.io)
 
 ---
 
@@ -57,8 +57,8 @@ dev → Staging (pre-production testing)
 
 ### GitHub Pages
 ```bash
-Repository: https://github.com/fedbel/fedouabel.github.io
-Live URL: https://fedouabel.github.io
+Repository: https://github.com/fedbel/fedbel.github.io
+Live URL: https://fedbel.github.io
 
 Benefits:
 ✓ Free hosting
@@ -73,7 +73,7 @@ Benefits:
 
 - **GitHub:** [@fedbel](https://github.com/fedbel)
 - **LinkedIn:** [Fedoua Belarbi](https://linkedin.com/in/fedouabel)
-- **Portfolio:** [fedouabel.github.io](https://fedouabel.github.io)
+- **Portfolio:** [fedbel.github.io](https://fedbel.github.io)
 
 ---
 
