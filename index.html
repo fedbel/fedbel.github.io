@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Python & Odoo Developer with 2.5+ years of experience specializing in Odoo Community Edition v14.">
+    <title>Fedoua BELARBI | Python & Odoo Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+        
+        :root {
+            --odoo-purple: #714B67;
+            --odoo-teal: #017E84;
+        }
+        
+        * {
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+        
+        .navbar-link {
+            position: relative;
+        }
+        
+        .navbar-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #714B67;
+        }
+        
+        .navbar-link:hover:after {
+            width: 100%;
+        }
+        
+        .section-header {
+            position: relative;
+        }
+        
+        .section-header:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #714B67, #017E84);
+            bottom: -6px;
+            left: 0;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(113 75 103 / 0.1), 
+                        0 8px 10px -6px rgb(1 126 132 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-100 font-sans">
+    <!-- NAVBAR -->
+    <nav class="bg-gray-950 border-b border-gray-800 sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <div class="w-9 h-9 bg-gradient-to-br from-[#714B67] to-[#017E84] rounded-2xl flex items-center justify-center text-white text-2xl font-bold">FB</div>
+                <h1 class="text-2xl font-semibold tracking-tighter">Fedoua BELARBI</h1>
+            </div>
+
+            <div class="hidden md:flex items-center gap-x-10 text-sm font-medium">
+                <a href="#about" class="navbar-link text-gray-300 hover:text-white">About</a>
+                <a href="#skills" class="navbar-link text-gray-300 hover:text-white">Skills</a>
+                <a href="#experience" class="navbar-link text-gray-300 hover:text-white">Experience</a>
+                <a href="#projects" class="navbar-link text-gray-300 hover:text-white">Projects</a>
+                <a href="#contact" class="navbar-link text-gray-300 hover:text-white">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-x-4">
+                <a href="https://github.com/fedbel" target="_blank" 
+                   class="flex items-center gap-x-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-2xl text-sm font-medium">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <button onclick="toggleMobileMenu()" class="md:hidden w-11 h-11 flex items-center justify-center text-2xl">
+                    <i id="hamburger-icon" class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-gray-800 px-6 py-6">
+            <div class="flex flex-col gap-y-6 text-center text-lg font-medium">
+                <a href="#about" onclick="toggleMobileMenu()" class="py-2">About</a>
+                <a href="#skills" onclick="toggleMobileMenu()" class="py-2">Skills</a>
+                <a href="#experience" onclick="toggleMobileMenu()" class="py-2">Experience</a>
+                <a href="#projects" onclick="toggleMobileMenu()" class="py-2">Projects</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-x-2 bg-white/10 text-white text-sm font-medium px-6 py-3 rounded-3xl">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    OPEN TO OPPORTUNITIES
+                </div>
+                
+                <h1 class="text-6xl md:text-7xl font-semibold tracking-tighter leading-none mt-6">
+                    Hi, I'm <span class="text-[#714B67]">Fedoua</span>
+                </h1>
+                
+                <h2 class="text-3xl md:text-4xl text-gray-400 font-medium mt-3">
+                    Python & Odoo Developer
+                </h2>
+                
+                <p class="text-xl text-gray-400 mt-8 max-w-lg">
+                    With over 2.5 years of hands-on experience building and customizing enterprise solutions on 
+                    <strong class="text-white">Odoo Community Edition v14</strong>. 
+                    I specialize in developing clean, maintainable and scalable ERP modules that solve real business challenges.
+                </p>
+                
+                <div class="flex items-center gap-x-4 mt-10">
+                    <a href="#projects" 
+                       class="flex-1 md:flex-none px-8 py-5 bg-[#714B67] hover:bg-[#5a3a52] text-white font-semibold text-lg rounded-3xl flex items-center justify-center gap-x-3">
+                        View My Projects
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    
+                    <a href="#contact" 
+                       class="flex-1 md:flex-none px-8 py-5 border-2 border-white/60 hover:border-white text-white font-semibold text-lg rounded-3xl flex items-center justify-center">
+                        Get In Touch
+                    </a>
+                    
+                    <a href="resume.pdf" target="_blank"
+                       class="hidden md:flex items-center gap-x-3 px-6 py-5 border border-white/30 hover:border-white/70 rounded-3xl text-sm font-medium">
+                        <i class="fas fa-download"></i>
+                        <span>Download Resume</span>
+                    </a>
+                </div>
+                
+                <div class="mt-12 flex flex-wrap gap-x-8 gap-y-4 text-sm text-gray-400">
+                    <div class="flex items-center gap-x-2">
+                        <i class="fab fa-python text-[#017E84]"></i>
+                        <span>Python Developer</span>
+                    </div>
+                    <div class="flex items-center gap-x-2">
+                        <i class="fas fa-cube text-[#714B67]"></i>
+                        <span>Odoo v14 CE Specialist</span>
+                    </div>
+                    <div class="flex items-center gap-x-2">
+                        <i class="fab fa-docker text-[#017E84]"></i>
+                        <span>Docker &amp; Git Expert</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about" class="max-w-screen-2xl mx-auto px-6 py-24 border-t border-gray-800">
+        <div class="grid md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-7">
+                <h2 class="section-header text-5xl font-semibold tracking-tight mb-8">About Me</h2>
+                <div class="prose prose-invert text-lg text-gray-300 leading-relaxed text-justify">
+                    <p>
+                        I'm a passionate Python and Odoo developer with more than 2.5 years of professional experience focused on the 
+                        <strong>Odoo Community Edition v14</strong>. 
+                        I enjoy transforming complex business requirements into efficient, user-friendly ERP solutions.
+                    </p>
+                    <p>
+                        My expertise includes developing custom modules, extending core functionality, creating automated workflows, 
+                        and integrating Odoo with external systems. I follow best practices such as clean code principles, proper inheritance
+                         and development of maintainable and scalable applications.
+                    </p>
+                    <p>
+                        I thrive in collaborative environments and am always eager to learn new tools and contribute to open-source or team projects.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="md:col-span-5 bg-gray-900/50 rounded-3xl p-8 border border-white/10">
+                <h3 class="text-[#017E84] uppercase text-sm font-semibold tracking-widest mb-6">Core Technologies</h3>
+                <div class="flex flex-wrap gap-4">
+                    <div class="px-5 py-2 bg-white/10 rounded-2xl text-sm flex items-center gap-x-2">
+                        <i class="fab fa-python"></i> Python
+                    </div>
+                    <div class="px-5 py-2 bg-white/10 rounded-2xl text-sm flex items-center gap-x-2">
+                        <i class="fas fa-cube"></i> Odoo Framework
+                    </div>
+                    <div class="px-5 py-2 bg-white/10 rounded-2xl text-sm flex items-center gap-x-2">
+                        <i class="fas fa-code"></i> HTML5, CSS3, XML
+                    </div>
+                      <div class="px-5 py-2 bg-white/10 rounded-2xl text-sm flex items-center gap-x-2">
+                        <i class="fas fa-flask"></i> Flask
+                    </div>
+                     <div class="px-5 py-2 bg-white/10 rounded-2xl text-sm flex items-center gap-x-2">
+                        <i class="fab fa-docker"></i> Docker
+                    </div>
+                    <div class="px-5 py-2 bg-white/10 rounded-2xl text-sm flex items-center gap-x-2">
+                        <i class="fab fa-git-alt"></i> Git, GitHub, GitLab
+                    </div>
+                </div>
+                
+                <div class="mt-12 pt-8 border-t border-gray-800 text-sm">
+                    <div class="flex justify-between mb-3">
+                        <span class="text-gray-400">Experience</span>
+                        <span class="font-semibold">2.5+ years</span>
+                    </div>
+                    <div class="flex justify-between mb-3">
+                        <span class="text-gray-400">Primary Focus</span>
+                        <span class="font-semibold">Odoo Community v14 and above</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-400">Tools I Love</span>
+                        <span class="font-semibold">VS Code • Docker • Git</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="bg-gray-900 py-24">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <h2 class="section-header text-5xl font-semibold tracking-tight mb-12">Skills & Technologies</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="bg-gray-950 border border-white/10 rounded-3xl p-8 flex flex-col items-center text-center card-hover">
+                    <i class="fab fa-python text-6xl text-[#017E84] mb-6"></i>
+                    <h4 class="font-semibold text-xl">Python</h4>
+                    <p class="text-sm text-gray-400 mt-2">OOP, ORM, APIs, scripting &amp; automation</p>
+                </div>
+                <div class="bg-gray-950 border border-white/10 rounded-3xl p-8 flex flex-col items-center text-center card-hover">
+                    <i class="fas fa-cube text-6xl text-[#714B67] mb-6"></i>
+                    <h4 class="font-semibold text-xl">Odoo Framework v14 CE</h4>
+                    <p class="text-sm text-gray-400 mt-2">Models, Views, Controllers, Workflows, QWeb Reports</p>
+                </div>
+                   <div class="bg-gray-950 border border-white/10 rounded-3xl p-8 flex flex-col items-center text-center card-hover">
+                    <i class="fas fa-code text-6xl text-[#017E84] mb-6"></i>
+                    <h4 class="font-semibold text-xl">HTML5, CSS3 &amp; XML</h4>
+                    <p class="text-sm text-gray-400 mt-2">Frontend &amp; Odoo views / QWeb</p>
+                </div>
+                <div class="bg-gray-950 border border-white/10 rounded-3xl p-8 flex flex-col items-center text-center card-hover">
+                    <i class="fas fa-flask text-6xl text-[#714B67] mb-6"></i>
+                    <h4 class="font-semibold text-xl">Flask</h4>
+                    <p class="text-sm text-gray-400 mt-2">REST APIs &amp; microservices</p>
+                </div>
+                <div class="bg-gray-950 border border-white/10 rounded-3xl p-8 flex flex-col items-center text-center card-hover">
+                    <i class="fab fa-docker text-6xl text-[#017E84] mb-6"></i>
+                    <h4 class="font-semibold text-xl">Docker</h4>
+                    <p class="text-sm text-gray-400 mt-2">Containerization &amp; deployment</p>
+                </div>
+             
+                <div class="bg-gray-950 border border-white/10 rounded-3xl p-8 flex flex-col items-center text-center card-hover">
+                    <i class="fab fa-git-alt text-6xl text-[#714B67] mb-6"></i>
+                    <h4 class="font-semibold text-xl">Version Control</h4>
+                    <p class="text-sm text-gray-400 mt-2">Git, GitHub, GitLab &amp; CI/CD basics</p>
+                </div>
+                <div class="bg-gray-950 border border-white/10 rounded-3xl p-8 flex flex-col items-center text-center card-hover">
+                    <i class="fas fa-database text-6xl text-[#017E84] mb-6"></i>
+                    <h4 class="font-semibold text-xl">PostgreSQL</h4>
+                    <p class="text-sm text-gray-400 mt-2">ORM queries &amp; database design</p>
+                </div>
+                <div class="bg-gray-950 border border-white/10 rounded-3xl p-8 flex flex-col items-center text-center card-hover">
+                    <i class="fas fa-laptop-code text-6xl text-[#714B67] mb-6"></i>
+                    <h4 class="font-semibold text-xl">VS Code</h4>
+                    <p class="text-sm text-gray-400 mt-2">Daily development environment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="max-w-screen-2xl mx-auto px-6 py-24 border-t border-gray-800">
+        <h2 class="section-header text-5xl font-semibold tracking-tight mb-12">Experience</h2>
+        
+        <div class="max-w-4xl">
+            <div class="flex gap-8">
+                <div class="w-32 flex-shrink-0 text-right">
+                    <div class="text-sm font-medium text-[#714B67]">2023 — Present</div>
+                    <div class="text-xs text-gray-400">2.5+ years</div>
+                </div>
+                <div class="flex-1 border-l-2 border-[#714B67] pl-8">
+                    <h4 class="text-2xl font-semibold">Python & Odoo Developer</h4>
+                    <p class="text-[#017E84] text-lg"> TAYAL SPA/ JUNIOR IT DEVELOPMENT SPECIALIST</p>
+                    
+                    <ul class="mt-8 space-y-5 text-gray-300 list-disc pl-5">
+                        <li>Designed, developed, and maintained multiple custom modules for Odoo Community Edition v14, including extensions for employee management.</li>
+                        <li>Implemented automated business workflows using server actions, cron jobs, and computed fields, significantly improving operational efficiency.</li>
+                        <li>Created custom reports and views with QWeb templates and XML, delivering clear insights for stakeholders.</li>
+                        <li>Built RESTful APIs to integrate Odoo with external third-party systems and platforms.</li>
+                        <li>Containerized Odoo environments using Docker and docker-compose for consistent development, testing, and deployment workflows.</li>
+                        <li>Collaborated with cross-functional teams to gather requirements, troubleshoot issues, and ensure high-quality, maintainable code following Odoo best practices.</li>
+                        <li>Managed version control with Git and GitLab, contributing to smooth team collaboration.</li>
+                    </ul>
+                    
+                    <div class="flex flex-wrap gap-2 mt-10">
+                        <span class="text-xs px-4 py-2 bg-white/10 rounded-3xl">Odoo v14 CE</span>
+                        <span class="text-xs px-4 py-2 bg-white/10 rounded-3xl">Python</span>
+                        <span class="text-xs px-4 py-2 bg-white/10 rounded-3xl">Docker</span>
+                        <span class="text-xs px-4 py-2 bg-white/10 rounded-3xl">REST APIs</span>
+                        <span class="text-xs px-4 py-2 bg-white/10 rounded-3xl">QWeb Reports</span>
+                        <span class="text-xs px-4 py-2 bg-white/10 rounded-3xl">PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="bg-gray-900 py-24">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <h2 class="section-header text-5xl font-semibold tracking-tight mb-4">Featured Projects</h2>
+            <p class="text-gray-400 mb-12 max-w-md">Here are some of the custom solutions and modules I've developed.</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-950 rounded-3xl overflow-hidden card-hover border border-white/10">
+                    <div class="h-52 bg-gradient-to-br from-[#017E84] to-[#714B67] flex items-center justify-center text-6xl">👨‍⚕️</div>
+                    <div class="p-8">
+                        <h4 class="font-semibold text-2xl mb-3">Employee Medical Visits Management</h4>
+                        <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify">
+                            Developed and customized an employee medical visits management module to help HR department effectively track, manage, and report on employee medical records, clinical visits, work-related accidents, and sick leaves.
+                        </p>
+                        <!-- <a href="https://github.com/fedbel" target="_blank" 
+                           class="flex items-center gap-x-2 text-[#017E84] font-medium text-sm">
+                            View Repository <i class="fas fa-external-link-alt ml-1"></i>
+                        </a> -->
+                    </div>
+                </div>
+                
+                <div class="bg-gray-950 rounded-3xl overflow-hidden card-hover border border-white/10">
+                    <div class="h-52 bg-gradient-to-br from-[#017E84] to-[#714B67] flex items-center justify-center text-6xl">📑</div>
+                    <div class="p-8">
+                        <h4 class="font-semibold text-2xl mb-3">Contract Lifecycle Management (CLM)</h4>
+                        <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify">
+                            Designed and developed a contract lifecycle management system under Odoo, optimizing contract processing and compliance tracking. Collaborated with legal team to ensure comprehensive requirements coverage.
+                        </p>
+                        <!-- <a href="https://github.com/fedbel" target="_blank" 
+                           class="flex items-center gap-x-2 text-[#017E84] font-medium text-sm">
+                            View Repository <i class="fas fa-external-link-alt ml-1"></i>
+                        </a> -->
+                    </div>
+                </div>
+                <div class="bg-gray-950 rounded-3xl overflow-hidden card-hover border border-white/10">
+                    <div class="h-52 bg-gradient-to-br from-[#714B67] to-[#017E84] flex items-center justify-center text-6xl">🎓</div>
+                    <div class="p-8">
+                        <h4 class="font-semibold text-2xl mb-3">HR Training Management</h4>
+                        <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify">
+                            Designed and implemented an HR Training and Development Programs management module to manage, track, and improve employee training initiatives, ensuring continuous development and alignment with organizational goals.
+                        </p>
+                        <!-- <a href="https://github.com/fedbel" target="_blank" 
+                           class="flex items-center gap-x-2 text-[#017E84] font-medium text-sm">
+                            View Repository <i class="fas fa-external-link-alt ml-1"></i>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- <div class="text-center mt-16">
+                <a href="https://github.com/fedbel" target="_blank"
+                   class="inline-flex items-center gap-x-3 px-8 py-5 bg-white/10 hover:bg-white/20 rounded-3xl text-lg font-medium">
+                    <i class="fab fa-github text-3xl"></i>
+                    <span>See All Projects on GitHub</span>
+                </a>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="max-w-screen-2xl mx-auto px-6 py-24 border-t border-gray-800">
+        <div class="grid md:grid-cols-2 gap-16">
+            <div>
+                <h2 class="section-header text-5xl font-semibold tracking-tight mb-6">Let's Connect</h2>
+                <p class="text-xl text-gray-400">Interested in collaborating on an Odoo project, integration, or discussing opportunities? Feel free to reach out.</p>
+                
+                <div class="mt-12 space-y-8">
+                    <a href="mailto:belarbifedoua@gmail.com" class="flex items-center gap-x-5 group">
+                        <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-2xl group-hover:bg-[#714B67]">✉️</div>
+                        <div>
+                            <div class="text-sm text-gray-400">Email</div>
+                            <!-- <div class="font-medium text-2xl">belarbifedoua@gmail.com</div> -->
+                        </div>
+                    </a>
+                    
+                    <a href="https://linkedin.com/in/fedoua-bel" target="_blank" class="flex items-center gap-x-5 group">
+                        <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-2xl group-hover:bg-[#017E84]">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div>
+                            <div class="text-sm text-gray-400">LinkedIn</div>
+                            <!-- <div class="font-medium text-2xl">linkedin.com/in/fedoua-bel</div> -->
+                        </div>
+                    </a>
+                    
+                    <a href="https://github.com/fedbel" target="_blank" class="flex items-center gap-x-5 group">
+                        <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-2xl group-hover:bg-black">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div>
+                            <div class="text-sm text-gray-400">GitHub</div>
+                            <!-- <div class="font-medium text-2xl">@fedbel</div> -->
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="bg-gray-900 rounded-3xl p-10">
+                <h3 class="text-3xl font-medium mb-6">Open to</h3>
+                <div class="space-y-4 text-gray-300">
+                    <div class="flex gap-4">
+                        <span class="text-[#017E84]">→</span>
+                        <span>Custom Odoo module development</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-[#017E84]">→</span>
+                        <span>Third-party integrations &amp; APIs</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-[#017E84]">→</span>
+                        <span>Dockerized Odoo environments</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-[#017E84]">→</span>
+                        <span>Workflow automation &amp; optimization</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-12 border-t border-gray-900">
+        <div class="max-w-screen-2xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+            <div>© 2026 Fedoua BELARBI • Python &amp; Odoo Developer</div>
+            <div class="flex items-center gap-x-6 mt-6 md:mt-0">
+                <a href="https://github.com/fedbel" target="_blank" class="hover:text-white">GitHub</a>
+                <div class="text-xs">Hosted on GitHub Pages</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu')
+            const icon = document.getElementById('hamburger-icon')
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden')
+                icon.classList.replace('fa-bars', 'fa-xmark')
+            } else {
+                menu.classList.add('hidden')
+                icon.classList.replace('fa-xmark', 'fa-bars')
+            }
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'))
+                if (target) {
+                    e.preventDefault()
+                    target.scrollIntoView({ behavior: 'smooth' })
+                }
+            })
+        })
+    </script>
+</body>
+</html>
